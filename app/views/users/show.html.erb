@@ -1,2 +1,9 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>ユーザー詳細ページ</h1>
+<h3><%= @user.email %></h3>
+<h2>投稿内容1</h2>
+<% @user.posts.each do |post| %>
+  <a href="/posts/<%= post.id %>"><%= post.content %></a>
+  <hr>
+<% end %>
+<%= link_to "ユーザー一覧へ", post_path %>
+<%= link_to "ホームへ戻る", posts_path %>
